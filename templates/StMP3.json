@@ -1,0 +1,8 @@
+{
+    "title": "Standard MP3",
+    "value": "StMP3",
+    "outputExtension": ".mp3",
+    "videoCodec": null,
+    "audioCodec": "MP3",
+    "args": ["-vn", "-c:a", "libmp3lame", "-qscale:a","9"]
+}

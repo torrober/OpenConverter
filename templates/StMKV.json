@@ -1,0 +1,8 @@
+{
+    "title": "Standard MKV",
+    "value": "StMKV",
+    "outputExtension": ".mkv",
+    "videoCodec": null,
+    "audioCodec": null,
+    "args": ["-c:v", "copy","-c:a","copy"]
+}

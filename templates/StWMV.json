@@ -1,0 +1,8 @@
+{
+    "title": "Standard WMV",
+    "value": "StWMV",
+    "outputExtension": ".wmv",
+    "videoCodec": "wmv2",
+    "audioCodec": "wmav2",
+    "args": ["-c:v", "wmv2","-c:a","wmav2"]
+}

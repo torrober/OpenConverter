@@ -1,0 +1,8 @@
+{
+    "title": "Standard MP4",
+    "value": "StMP4",
+    "outputExtension": ".mp4",
+    "videoCodec": "H.264",
+    "audioCodec": "MP3",
+    "args": ["-c:v", "libx264", "-c:a","libmp3lame"]
+}

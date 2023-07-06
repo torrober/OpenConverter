@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open Converter</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/dark.css" />
+    <link href="css/MaterialSymbolsOutlined.css" rel="stylesheet" />
+    <style>
+        body {
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body id="body" class="bg-body-primary">
+    <div class="toolbar position-fixed w-100" style="z-index: 100;">
+        <div class="container-fluid text-center bg-body-secondary fixed" style="padding-top: 0.5625rem; padding-bottom: 0.5625rem">
+            <div class="container-fluid" >
+                <div class="row" >
+                    <div class="col">
+                        <span class="material-symbols-outlined">
+                            movie_edit
+                        </span>
+                        <br>
+                        Convert Video
+                    </div>
+                    <div class="col">
+                        <span class="material-symbols-outlined">
+                            system_update_alt
+                        </span>
+                        <br>
+                        Download Video
+                    </div>
+                    <div class="col">
+                        <span class="material-symbols-outlined">
+                            fiber_manual_record
+                        </span>
+                        <br>
+                        Record Screen
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="bg-body-tertiary " style="padding-top: 0.5625rem; padding-bottom: 0.5625rem">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-secondary" id="addFile" style="display: flex; justify-content: center;align-items: center;">
+                    <span class="material-symbols-outlined">
+                        note_add
+                    </span>
+                    Add File
+                </button>
+            </div>
+        </nav>
+    </div>
+    <div class="content container" id="main"style="padding-top: 135px; padding-bottom: 135px;">
+    </div>
+
+    <footer class="navbar fixed-bottom bg-body-secondary">
+        <div class="container-fluid" style="justify-content: center;">
+            <div class="row" style="width: 100%;">
+                <div class="col-10">
+                    <div class="progress" style="height: 100%">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <button type="button" id="convertButton" style="width: 100%;" class="btn btn-primary">Convert</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/convert.js"></script>
+    <script src="js/darkMode.js"></script>
+    
+</body>
+
+</html>

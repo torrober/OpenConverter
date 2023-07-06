@@ -1,0 +1,8 @@
+{
+    "title": "Standard MP4 with aac",
+    "value": "StMP4ACC",
+    "outputExtension": ".mp4",
+    "videoCodec": "H.264",
+    "audioCodec": "AAC",
+    "args": ["-c:v", "libx264", "-c:a","aac"]
+}

@@ -1,0 +1,8 @@
+{
+    "title": "Standard AVI",
+    "value": "StAVI",
+    "outputExtension": ".avi",
+    "videoCodec": "MPEG4",
+    "audioCodec": "MP3",
+    "args": ["-c:v", "mpeg4", "-c:a","libmp3lame"]
+}
