@@ -25,14 +25,14 @@ const createWindow = () => {
       nodeIntegration: true,
       contextIsolation: false,
     },
-    autoHideMenuBar: true
+    //autoHideMenuBar: true
   });
 
   enable(mainWindow.webContents);
 
   // Load the index.html of the app.
   mainWindow.loadFile('index.html');
-  mainWindow.setMenu(null);
+  //mainWindow.setMenu(null);
 };
 
 app.whenReady().then(() => {
@@ -80,13 +80,18 @@ ipcMain.on('fileImported', async (event, filePaths) => {
     }    
     mainWindow.webContents.send('fileInfo', data);
   } catch (error) {
-    console.error(error);
+    mainWindow.webContents.send('ffmpegError', error);
   }
 });
 ipcMain.on('settingsDone', async (event, data) => {
   convertSettings.close()
   ffmpegQueue.enqueue(data)
 })
+
+ipcMain.on('changeView', async (e,data) => {
+  mainWindow.loadFile(data);
+})
+
 ipcMain.on('startConversion', async (e) => {
   const list = ffmpegQueue.list();
   let totalBytes = 0;
@@ -103,7 +108,6 @@ ipcMain.on('startConversion', async (e) => {
     mainWindow.webContents.send('progressBar', (bytesProcessed / totalBytes) * 100);
     await convert(ffmpeg, element.input, element.output, element.args);
   }
-
   mainWindow.webContents.send('conversionEnded', 'ok');
 });
 

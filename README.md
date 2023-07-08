@@ -38,4 +38,4 @@ Finally, you need to run the program with
 ## To-do list
 - Add the Youtube Download function
 - Add Record Screen function
-- fix file at drag n drop 
+- ~~fix file at drag n drop~~ DONE!

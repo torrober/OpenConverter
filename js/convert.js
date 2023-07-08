@@ -19,7 +19,7 @@ function generateCard(data,elem) {
 				${data.name} - ${data.extension}
 			</div>
 			<div class="col-2" style="align-items: center;display: flex; justify-content: center;">
-				<a href="#" id="settings" data-clip="${elem}" class="btn btn-primary m-10" style="margin-top: 10px;">Settings</a>
+				<a href="#" id="settings" data-clip="${elem}" class="btn btn-primary m-10" style="margin-top: 10px;">Set Output</a>
 			</div>
 		</div>
 		</div>
@@ -42,7 +42,7 @@ addFileButton.addEventListener('click', (e) => {
 	dialog.showOpenDialog({
 		properties: ['openFile', 'multiSelections'],
 		filters: [
-			{ name: 'Video Files', extensions: ['mkv', 'avi', 'mp4'] },
+			{ name: 'Video Files', extensions: ['mkv', 'avi', 'mp4', 'wmv'] },
 			{ name: 'All Files', extensions: ['*'] }
 		]
 	}).then((result) => {
@@ -86,7 +86,16 @@ ipcRenderer.on('conversionEnded', (event, data) => {
 document.querySelector('#convertButton').addEventListener('click', () => {
 	ipcRenderer.send('startConversion')
 })
-
+ipcRenderer.on('ffmpegError', async (event,data) => {
+	if(sAlert) {
+	  sAlert.close()
+	}
+	Swal.fire(
+		'Error',
+		data,
+		'error'
+	).show()
+})
 document.addEventListener('drop', (event) => {
 	event.preventDefault();
 	event.stopPropagation();
